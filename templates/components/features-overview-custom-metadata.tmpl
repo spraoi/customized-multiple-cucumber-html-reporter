@@ -27,7 +27,6 @@
                         <% if (suite.displayDuration) { %>
                         <th>Duration</th>
                         <% } %>
-                        <th>Total</th>
                         <th>Passed</th>
                         <th>Failed</th>
                         <% if(+suite.scenarios.skipped > 0) { %>
@@ -63,11 +62,12 @@
                             <% } %>
                             <% } %>
                         </td>
-                        <td class="text-center">
+                        <td class="text-center status-td">
                             <% var statusIcon; %>
                             <% var status; %>
                             <% if (feature.isFailed) { %>
-                            <% status = 'Failed'; %>
+                            Failed<% status = 'Failed'; %>
+                            <p></p>
                             <% statusIcon = 'exclamation-circle failed-color'; %>
                             <% } else if (feature.isAmbiguous) { %>
                             <% status = 'Ambiguous'; %>
@@ -97,7 +97,6 @@
                         <% if (suite.displayDuration) { %>
                         <td><%= feature.time %></td>
                         <% } %>
-                        <td><%= feature.scenarios.total %></td>
                         <td><%= feature.scenarios.passed %></td>
                         <td><%= feature.scenarios.failed %></td>
                         <% if(+suite.scenarios.skipped > 0) { %>
