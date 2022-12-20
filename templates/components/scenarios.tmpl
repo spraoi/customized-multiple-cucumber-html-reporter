@@ -80,26 +80,32 @@
                                 <% if(step.result) { %>
                                     <% if(step.result.status.toLowerCase() === 'passed') { %>
                                         <div class="label" title="Success">
+                                            <p><%=step.result.status.toLowerCase()%></p>
                                             <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
                                         </div>
                                     <% } else if(step.result.status.toLowerCase() === 'failed') { %>
                                         <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed">
+                                            <p><%=step.result.status.toLowerCase()%></p>
                                             <i class="fa fa-exclamation-circle fa-2x failed-color"></i>
                                         </div>
                                     <% } else if(step.result.status.toLowerCase() === 'skipped') { %>
                                         <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+                                            <p><%=step.result.status.toLowerCase()%></p>                                        
                                             <i class="fa fa-arrow-circle-right fa-2x skipped-color"></i>
                                         </div>
                                     <% } else if(step.result.status.toLowerCase() === 'pending') { %>
                                         <div class="label" data-toggle="tooltip" data-placement="top" title="Step is pending">
+                                            <p><%=step.result.status.toLowerCase()%></p>
                                             <i class="fa fa-minus-circle fa-2x pending-color"></i>
                                         </div>
                                     <% } else if(step.result.status.toLowerCase() === 'ambiguous') { %>
                                         <div class="label" data-toggle="tooltip" data-placement="top" title="Step has double step implementation and failed because of that.">
+                                            <p><%=step.result.status.toLowerCase()%></p>
                                             <i class="fa fa-flash fa-2x ambiguous-color"></i>
                                         </div>
                                     <% } else { %>
                                         <div class="label" data-toggle="tooltip" data-placement="top" title="Step has no implementation.">
+                                            <p><%=step.result.status.toLowerCase()%></p>
                                             <i class="fa fa-question-circle fa-2x not-defined-color"></i>
                                         </div>
                                     <% } %>
@@ -150,23 +156,23 @@
                                     <% } %>
 
                                     <% if (step.result.error_message) { %>
-                                        <a href="#error<%= scenarioIndex %>-<%= stepIndex %>-error" data-toggle="collapse">+ Show Error</a>
+                                        <a href="#error<%= scenarioIndex %>-<%= stepIndex %>-error" data-toggle="collapse">SHOW ERROR</a>
                                     <% } %>
 
                                     <% if (step.json) { %>
-                                        <a href="#info<%= scenarioIndex %>-<%= stepIndex %>-json" data-toggle="collapse">+ Show Info</a>
+                                        <a href="#info<%= scenarioIndex %>-<%= stepIndex %>-json" data-toggle="collapse">SHOW INFO</a>
                                     <% } %>
                                     
                                     <% if (step.text) { %>
-                                        <a href="#info<%= scenarioIndex %>-<%= stepIndex %>-text" data-toggle="collapse">+ Show Info</a>
+                                        <a href="#info<%= scenarioIndex %>-<%= stepIndex %>-text" data-toggle="collapse">SHOW INFO</a>
                                     <% } %>
 
                                     <% if (step.html) { %>
-                                        <a href="#info<%= scenarioIndex %>-<%= stepIndex %>-html" data-toggle="collapse">+ Show Info</a>
+                                        <a href="#info<%= scenarioIndex %>-<%= stepIndex %>-html" data-toggle="collapse">SHOW INFO</a>
                                     <% } %>
 
                                     <% if (step.image) { %>
-                                        <a href="#info<%= scenarioIndex %>-<%= stepIndex %>-image" data-toggle="collapse">+ Screenshot</a>
+                                        <a href="#info<%= scenarioIndex %>-<%= stepIndex %>-image" data-toggle="collapse">FAILED STEP</a>
                                     <% } %>
 
                                     <% if (!_.isEmpty(step.attachments)) { %>
