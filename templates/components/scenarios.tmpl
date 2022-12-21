@@ -172,7 +172,7 @@
                                     <% } %>
 
                                     <% if (step.image) { %>
-                                        <a href="#info<%= scenarioIndex %>-<%= stepIndex %>-image" data-toggle="collapse">FAILED TEST STEP SCREENSHOT</a>
+                                        <a href="#info<%= scenarioIndex %>-<%= stepIndex %>-image" data-toggle="collapse" class="error-info">FAILED TEST STEP SCREENSHOT</a>
                                     <% } %>
 
                                     <% if (!_.isEmpty(step.attachments)) { %>
