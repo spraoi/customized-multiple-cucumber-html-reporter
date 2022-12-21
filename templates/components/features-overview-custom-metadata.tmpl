@@ -27,6 +27,7 @@
                         <% if (suite.displayDuration) { %>
                         <th>Duration</th>
                         <% } %>
+                        <th>Total</th>
                         <th>Passed</th>
                         <th>Failed</th>
                         <% if(+suite.scenarios.skipped > 0) { %>
@@ -65,25 +66,31 @@
                         <td class="text-center status-td">
                             <% var statusIcon; %>
                             <% var status; %>
+                            <% status %>
                             <% if (feature.isFailed) { %>
-                            Failed<% status = 'Failed'; %>
-                            <p></p>
+                            <% status = 'Failed'; %>
                             <% statusIcon = 'exclamation-circle failed-color'; %>
+                            Failed
                             <% } else if (feature.isAmbiguous) { %>
                             <% status = 'Ambiguous'; %>
                             <% statusIcon = 'flash ambiguous-color'; %>
+                            Ambiguous
                             <% } else if (feature.isNotdefined) { %>
                             <% status = 'Not Defined'; %>
                             <% statusIcon = 'question-circle not-defined-color'; %>
+                            Not Defined
                             <% } else if (feature.isPending) { %>
                             <% status = 'Pending'; %>
                             <% statusIcon = 'minus-circle pending-color'; %>
+                            Pending
                             <% } else if (feature.isSkipped) { %>
                             <% status = 'Skipped'; %>
                             <% statusIcon = 'arrow-circle-right skipped-color'; %>
+                            Skipped
                             <% } else { %>
                             <% status = 'Passed'; %>
                             <% statusIcon = 'check-circle passed-color'; %>
+                            Passed
                             <% } %>
                             <i class="fa fa-<%= statusIcon %> fa-lg" data-toggle="tooltip" data-placement="top" title="<%= status %>">
                                 <span><%= statusIcon %></span>
@@ -97,6 +104,7 @@
                         <% if (suite.displayDuration) { %>
                         <td><%= feature.time %></td>
                         <% } %>
+                        <td><%= feature.scenarios.total %></td>
                         <td><%= feature.scenarios.passed %></td>
                         <td><%= feature.scenarios.failed %></td>
                         <% if(+suite.scenarios.skipped > 0) { %>

@@ -156,9 +156,9 @@
                                     <% } %>
 
                                     <% if (step.result.error_message) { %>
-                                        <a href="#error<%= scenarioIndex %>-<%= stepIndex %>-error" data-toggle="collapse">SHOW ERROR</a>
+                                        <a href="#error<%= scenarioIndex %>-<%= stepIndex %>-error" data-toggle="collapse" class="error-info">SHOW ERROR MESSAGE</a>
                                     <% } %>
-                                    <hr />
+
                                     <% if (step.json) { %>
                                         <a href="#info<%= scenarioIndex %>-<%= stepIndex %>-json" data-toggle="collapse">SHOW INFO</a>
                                     <% } %>
@@ -172,7 +172,7 @@
                                     <% } %>
 
                                     <% if (step.image) { %>
-                                        <a href="#info<%= scenarioIndex %>-<%= stepIndex %>-image" data-toggle="collapse">FAILED STEP</a>
+                                        <a href="#info<%= scenarioIndex %>-<%= stepIndex %>-image" data-toggle="collapse">FAILED TEST STEP SCREENSHOT</a>
                                     <% } %>
 
                                     <% if (!_.isEmpty(step.attachments)) { %>
